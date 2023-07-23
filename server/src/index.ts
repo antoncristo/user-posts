@@ -1,9 +1,12 @@
 import express from "express";
 import { config as envConfig } from "dotenv";
+import { init as mySqlInit } from "./database";
 
 const SERVER_PORT = 3300;
 
 envConfig();
+
+mySqlInit();
 
 const app = express();
 
