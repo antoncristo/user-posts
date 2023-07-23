@@ -12,9 +12,9 @@ export const App = () => {
 
 	return (
 		<ReactEVThemeProvider>
-			<Layout>
-				<QueryClientProvider client={queryClient}>
-					<BrowserRouter>
+			<QueryClientProvider client={queryClient}>
+				<BrowserRouter>
+					<Layout>
 						<Routes>
 							{routes.map(route => (
 								<Route
@@ -25,9 +25,9 @@ export const App = () => {
 								/>
 							))}
 						</Routes>
-					</BrowserRouter>
-				</QueryClientProvider>
-			</Layout>
+					</Layout>
+				</BrowserRouter>
+			</QueryClientProvider>
 		</ReactEVThemeProvider>
 	);
 };
