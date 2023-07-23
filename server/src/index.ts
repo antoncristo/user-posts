@@ -1,5 +1,6 @@
 import express from "express";
 import { config as envConfig } from "dotenv";
+import cors from "cors";
 
 import { init as mySqlInit } from "./database";
 import { appRouter } from "./api";
@@ -11,6 +12,9 @@ envConfig();
 mySqlInit();
 
 const app = express();
+
+app.use(express.json());
+app.use(cors());
 
 app.use("/api", appRouter);
 
