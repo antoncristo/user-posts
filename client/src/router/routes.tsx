@@ -1,10 +1,11 @@
 import { type IRoute } from './routes.type';
+import { Home } from '../components';
 
 export const routes: IRoute[] = [
 	{
 		path: '/',
 		index: true,
-		component: <div>home</div>
+		component: <Home />
 	},
 	{
 		path: '/posts',
