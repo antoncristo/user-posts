@@ -7,7 +7,12 @@ export const usersColumns: Array<Column<IUser>> = [
 		header: 'NAME',
 		cell: {
 			init: (user: IUser) => (
-				<TextField key={user.name} lineHeight='22px' fontWeight='bold'>
+				<TextField
+					key={user.name}
+					style={{ color: 'darkblue' }}
+					lineHeight='22px'
+					fontWeight='bold'
+				>
 					{user.name}
 				</TextField>
 			)

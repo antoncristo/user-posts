@@ -4,8 +4,9 @@ import * as postsService from './posts.service';
 export const GET_USER_POSTS_KEY = 'getUserPosts';
 
 export const useGetUserPosts = ({ userId }: { userId: number }) => {
-	const { data, isLoading, isError } = useQuery([GET_USER_POSTS_KEY], async () =>
-		postsService.getUserPosts({ userId })
+	const { data, isLoading, isError } = useQuery(
+		[GET_USER_POSTS_KEY, { userId }],
+		async () => postsService.getUserPosts({ userId })
 	);
 
 	return {
