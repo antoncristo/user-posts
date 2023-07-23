@@ -1,5 +1,5 @@
 import { type IRoute } from './routes.type';
-import { Home } from '../components';
+import { Home, Posts } from '../components';
 
 export const routes: IRoute[] = [
 	{
@@ -10,7 +10,7 @@ export const routes: IRoute[] = [
 	{
 		path: '/posts/:id',
 		index: false,
-		component: <div>posts</div>
+		component: <Posts />
 	},
 	{
 		path: '*',
