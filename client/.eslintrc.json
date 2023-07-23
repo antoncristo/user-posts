@@ -16,7 +16,9 @@
 				"@typescript-eslint/object-curly-spacing": "off",
 				"comma-dangle": "off",
 				"@typescript-eslint/comma-dangle": "off",
-				"@typescript-eslint/no-unsafe-call": "off"
+				"@typescript-eslint/no-unsafe-call": "off",
+				"@typescript-eslint/consistent-type-definitions": "off",
+				"@typescript-eslint/naming-convention": "off"
 			}
 		}
 	],
