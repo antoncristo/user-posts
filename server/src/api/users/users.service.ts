@@ -6,7 +6,7 @@ interface FetchExternalQueryParams {
   limit?: number;
 }
 
-export const fetchExternal = async (
+export const fetchExternal = (
   queryParams: FetchExternalQueryParams
 ): Promise<AxiosResponse<IUser[]>> => {
   const { start = 0, limit = 100 } = queryParams;
