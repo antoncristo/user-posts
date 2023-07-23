@@ -1,7 +1,8 @@
 import { Router } from "express";
 import { usersRouter } from "./users";
+import { postsRouter } from "./posts";
 
 export const appRouter = Router();
 
 appRouter.use("/users", usersRouter);
-// Add posts routes
+appRouter.use("/posts", postsRouter);
