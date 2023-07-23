@@ -15,8 +15,11 @@
 		"pretty": "prettier --write src/**/*.{ts,tsx,css}"
 	},
 	"dependencies": {
+		"@antoncristo/react-ev": "^0.17.1",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^6.14.2",
+		"styled-components": "^6.0.5"
 	},
 	"devDependencies": {
 		"@testing-library/jest-dom": "^5.16.5",
