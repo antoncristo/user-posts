@@ -7,7 +7,7 @@ export const useGetUsers = () => {
 	const { data, isLoading, isError } = useQuery([GET_USERS_KEY], usersService.getUsers);
 
 	return {
-		users: data,
+		users: data?.data,
 		isError,
 		isLoading
 	};
