@@ -8,7 +8,7 @@ export const routes: IRoute[] = [
 		component: <Home />
 	},
 	{
-		path: '/posts',
+		path: '/posts/:id',
 		index: false,
 		component: <div>posts</div>
 	},
