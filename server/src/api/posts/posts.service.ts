@@ -30,3 +30,16 @@ export const populateUserPosts = (posts: IPost[]) => {
     []
   );
 };
+
+export const deletePost = ({
+  userId,
+  postId,
+}: {
+  userId: number;
+  postId: number;
+}) => {
+  return execute<IPost>(
+    `delete from posts where userId=${userId} and id=${postId}`,
+    []
+  );
+};
