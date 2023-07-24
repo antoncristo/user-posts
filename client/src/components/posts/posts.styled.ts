@@ -1,15 +1,49 @@
-import { IconButton, TextField } from '@antoncristo/react-ev';
+import { IconButton, Input, TextField } from '@antoncristo/react-ev';
 import { styled } from 'styled-components';
 
 export const PostsBlock = styled.div`
+	padding: 10px 0;
 	box-sizing: border-box;
 	width: 100vw;
-	height: 100vh;
+	height: calc(100vh - 180px);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 24px;
+
 	gap: 16px;
+	overflow-y: auto;
+`;
+
+export const SearchBlock = styled.div`
+	display: flex;
+	align-items: center;
+
+	height: 80px;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+
+	button {
+		padding: 0;
+		margin-inline-start: 16px;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		border-radius: 6px;
+		width: 40px;
+		aspect-ratio: 1/1;
+
+		:hover {
+			border-radius: 6px;
+			box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+		}
+	}
+`;
+
+export const SearchInput = styled(Input)`
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+	width: 100%;
+	height: 40px;
 `;
 
 export const PostContainer = styled.div`

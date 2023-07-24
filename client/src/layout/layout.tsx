@@ -1,8 +1,10 @@
 import { type ReactNode } from 'react';
+import { useLocation } from 'react-router';
+import { TextField } from '@antoncristo/react-ev';
+
+import { LogoIcon } from '../assets';
 
 import * as S from './layout.styled';
-import { TextField } from '@antoncristo/react-ev';
-import { useLocation, useNavigate } from 'react-router';
 
 export interface LayoutProps {
 	children: ReactNode;
@@ -15,6 +17,7 @@ export const Layout = (props: LayoutProps) => {
 	return (
 		<S.LayoutContainer>
 			<S.Header>
+				<LogoIcon />
 				{pathname === '/' ? (
 					<TextField fontSize='28px'>Users List</TextField>
 				) : (

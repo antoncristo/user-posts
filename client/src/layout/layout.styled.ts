@@ -7,16 +7,17 @@ export const LayoutContainer = styled.div`
 
 export const Header = styled.div`
 	box-sizing: border-box;
+	gap: 16px;
 	display: flex;
 	align-items: center;
 	height: 60px;
 	padding: 24px;
-	border-bottom: 1px solid black;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.8);
 `;
 
 export const Body = styled.div`
 	box-sizing: border-box;
 	width: 100vw;
 	height: calc(100vh - 60px);
-	overflow-y: auto;
 `;
