@@ -9,4 +9,13 @@ export const getUserPosts = async ({
 }: {
 	userId: number;
 }): Promise<AxiosResponse<IPost[]>> =>
-	axiosInstance.get(Endpoints.GET_POSTS, { params: { userId } });
+	axiosInstance.get(Endpoints.POSTS, { params: { userId } });
+
+export const deleteUserPosts = async ({
+	userId,
+	postId
+}: {
+	userId: number;
+	postId: number;
+}): Promise<AxiosResponse<IPost[]>> =>
+	axiosInstance.delete(Endpoints.POSTS, { params: { userId, postId } });
