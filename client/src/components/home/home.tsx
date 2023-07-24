@@ -1,11 +1,17 @@
-import { TextField } from '@antoncristo/react-ev';
+import { useState } from 'react';
+
 import { useGetUsers } from '../../api';
+import { UsersTable } from './components/users-table';
+import { Pagination } from './components';
 
 import * as S from './home.styled';
-import { UsersTable } from './components/users-table';
+
+const PAGINATION_BULK = 4;
 
 export const Home = () => {
-	const { users, isLoading, isError } = useGetUsers();
+	const [page, setPage] = useState(1);
+
+	const { users, isLoading, isError } = useGetUsers({ page, count: PAGINATION_BULK });
 
 	if (isError) {
 		// Should be fallback component
@@ -15,6 +21,7 @@ export const Home = () => {
 	return (
 		<S.HomeContainer>
 			<UsersTable users={users} isLoading={isLoading} />
+			<Pagination setPage={setPage} page={page} currentList={users} />
 		</S.HomeContainer>
 	);
 };

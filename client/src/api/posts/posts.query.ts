@@ -1,11 +1,16 @@
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import * as postsService from './posts.service';
 
+const ONE_HOUR = 36000000;
+
 export const GET_USER_POSTS_KEY = 'getUserPosts';
 export const useGetUserPosts = ({ userId }: { userId: number }) => {
 	const { data, isLoading, isError } = useQuery(
 		[GET_USER_POSTS_KEY, { userId }],
-		async () => postsService.getUserPosts({ userId })
+		async () => postsService.getUserPosts({ userId }),
+		{
+			staleTime: ONE_HOUR
+		}
 	);
 
 	return {

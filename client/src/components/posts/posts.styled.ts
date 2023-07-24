@@ -46,7 +46,7 @@ export const SearchInput = styled(Input)`
 	height: 40px;
 `;
 
-export const PostContainer = styled.div`
+export const PostContainer = styled.div<{ isDeleted: boolean }>`
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
@@ -56,6 +56,8 @@ export const PostContainer = styled.div`
 	padding: 24px;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
 	border-radius: 6px;
+	opacity: ${({ isDeleted }) => (isDeleted ? 0 : 1)};
+	transition: opacity 1.3s ease-out;
 `;
 
 export const Header = styled.div`

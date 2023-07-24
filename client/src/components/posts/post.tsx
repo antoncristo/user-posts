@@ -5,9 +5,11 @@ import { useDeleteUserPost } from '../../api/posts';
 import { DeleteIcon } from '../../assets';
 
 import * as S from './posts.styled';
+import { useState } from 'react';
 
 export const Post = ({ post }: { post: IPost }) => {
 	const { id } = useParams();
+	const [isDeleted, setIsDeleted] = useState(false);
 	const { deletePost } = useDeleteUserPost();
 
 	if (!id) {
@@ -16,11 +18,14 @@ export const Post = ({ post }: { post: IPost }) => {
 	}
 
 	const deletePostHandler = () => {
-		deletePost({ userId: parseInt(id, 10), postId: post.id });
+		setIsDeleted(true);
+		setTimeout(() => {
+			deletePost({ userId: parseInt(id, 10), postId: post.id });
+		}, 1600);
 	};
 
 	return (
-		<S.PostContainer>
+		<S.PostContainer isDeleted={isDeleted}>
 			<S.Header>
 				<S.Title maxWidth='80%' fontSize='20px' fontWeight='bold'>
 					{post.title}
